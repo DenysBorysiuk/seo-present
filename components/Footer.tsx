@@ -1,7 +1,11 @@
+import Container from './Container';
+
 const Footer = () => {
   return (
     <footer className="bg-black">
-      <p className="text-white">Created by</p>
+      <Container>
+        <p className="text-white">Created by</p>
+      </Container>
     </footer>
   );
 };

@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   },
   // title: 'Seo',
   description: 'Seo in Nextjs',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Seo',
     description: 'Seo is a...',

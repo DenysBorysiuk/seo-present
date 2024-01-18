@@ -1,6 +1,4 @@
-type Post = {
-  id: string;
-};
+import { MetadataRoute } from 'next';
 
 async function fetchData() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -8,7 +6,7 @@ async function fetchData() {
   return result;
 }
 
-export default async function sitemap() {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'http://localhost';
 
   const posts = await fetchData();
@@ -23,7 +21,7 @@ export default async function sitemap() {
     lastModified: new Date(),
   };
 
-  const serviceUrls = posts.map(({ id }: Post) => {
+  const serviceUrls = posts.map(({ id }: { id: string }) => {
     return {
       url: `${baseUrl}/post/${id}`,
       lastModified: new Date(),

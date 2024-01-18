@@ -15,11 +15,13 @@ export default async function Home() {
   const posts = await fetchData();
 
   return (
-    <div>
+    <div className="container mx-auto">
       <h1>Home page</h1>
       {posts.map(({ id, title }: Post) => (
         <li key={id}>
-          <Link href={`/post/${id}`}>{title}</Link>
+          <Link href={`/post/${id}`}>
+            Post {id} : {title}
+          </Link>
         </li>
       ))}
     </div>

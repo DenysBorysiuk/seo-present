@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 type Props = {
   params: { id: string };
@@ -12,22 +13,26 @@ async function fetchData(id: string) {
 }
 
 // Генерація метаданих
-export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
-  const post = await fetchData(id);
+// export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
+//   const post = await fetchData(id);
 
-  return {
-    title: post.title,
-    description: post.body,
-  };
-}
+//   return {
+//     title: `Post ${id}`,
+//     description: post.body,
+//     alternates: {
+//       canonical: `/post/${post.id}`,
+//     },
+//   };
+// }
 
 // Компонент page
 const Post = async ({ params: { id } }: Props) => {
   const post = await fetchData(id);
 
   return (
-    <div>
-      <span>{id}</span>
+    <div className="container mx-auto">
+      <Link href="/">Back</Link>
+      <h1>Post {id}</h1>
       <h2>{post.title}</h2>
       <p>{post.body}</p>
     </div>

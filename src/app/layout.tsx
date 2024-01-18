@@ -6,13 +6,20 @@ import Header from '@/components/Header/Header';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Seo',
+  metadataBase: new URL('http://localhost'),
+  title: {
+    default: 'Seo',
+    template: `%s | Seo`,
+  },
+  // title: 'Seo',
   description: 'Seo in Nextjs',
-  // title: {
-  //   default: 'Seo',
-  //   template: `%s | Seo`,
-  // },
-  // keywords: ['seo', 'nextjs'],
+  openGraph: {
+    title: 'Seo',
+    description: 'Seo is a...',
+    images: '/images/og-image.jpg',
+    type: 'website',
+  },
+  keywords: ['seo', 'nextjs'],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -33,7 +33,7 @@ const Post = async ({ params: { id } }: Props) => {
     <div className="container mx-auto">
       <Link href="/">Back</Link>
       <h1>Post {id}</h1>
-      <h2>{post.title}</h2>
+      <h2 className="font-medium text-center text-[24px]">{post.title}</h2>
       <p>{post.body}</p>
     </div>
   );

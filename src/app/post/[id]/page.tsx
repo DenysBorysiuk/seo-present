@@ -12,18 +12,17 @@ async function fetchData(id: string) {
   return result;
 }
 
-// Генерація метаданих
-// export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
-//   const post = await fetchData(id);
+export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
+  const post = await fetchData(id);
 
-//   return {
-//     title: `Post ${id}`,
-//     description: post.body,
-//     alternates: {
-//       canonical: `/post/${post.id}`,
-//     },
-//   };
-// }
+  return {
+    title: `Post ${id}`,
+    description: post.body,
+    alternates: {
+      canonical: `/post/${post.id}`,
+    },
+  };
+}
 
 // Компонент page
 const Post = async ({ params: { id } }: Props) => {

@@ -7,7 +7,10 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('http://localhost'),
-  title: 'Seo',
+  title: {
+    default: 'Seo',
+    template: `%s | Seo`,
+  },
   description: 'Seo in Nextjs',
   openGraph: {
     title: 'Seo',
@@ -16,13 +19,9 @@ export const metadata: Metadata = {
     type: 'website',
   },
   keywords: ['seo', 'nextjs'],
-  // alternates: {
-  //   canonical: '/',
-  // },
-  // title: {
-  //   default: 'Seo',
-  //   template: `%s | Seo`,
-  // },
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

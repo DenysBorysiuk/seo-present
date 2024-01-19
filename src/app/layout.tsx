@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/Header/Header';
+import Header from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Seo in Nextjs',
   openGraph: {
     title: 'Seo',
-    description: 'Seo is a...',
+    description: 'Seo in Nextjs',
     images: '/images/og-image.jpg',
     type: 'website',
   },

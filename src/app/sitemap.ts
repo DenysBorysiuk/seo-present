@@ -21,12 +21,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(),
   };
 
-  const serviceUrls = posts.map(({ id }: { id: string }) => {
+  const postUrls = posts.map(({ id }: { id: string }) => {
     return {
       url: `${baseUrl}/post/${id}`,
       lastModified: new Date(),
     };
   });
 
-  return [homeUrl, aboutUrl, ...serviceUrls];
+  return [homeUrl, aboutUrl, ...postUrls];
 }

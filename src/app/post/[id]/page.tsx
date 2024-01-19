@@ -12,6 +12,7 @@ async function fetchData(id: string) {
   return result;
 }
 
+// Динамічна генерація метаданих
 export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
   const post = await fetchData(id);
 
